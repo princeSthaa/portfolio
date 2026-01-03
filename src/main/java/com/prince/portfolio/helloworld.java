@@ -9,4 +9,11 @@ public class helloworld {
     public String helloworld() {
         return "helloworld";
     }
+
+    @GetMapping("/main")
+    public String aboutMe() {
+        return "layout";
+    }
+
+
 }
