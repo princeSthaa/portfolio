@@ -25,6 +25,7 @@ public class helloworld {
     @GetMapping("/onCheck")
     public String onCheck(Model m) {
         m.addAttribute("activePage","onCheck");
+        m.addAttribute("onCheckStyle",true);
         return "layout";
     }
 

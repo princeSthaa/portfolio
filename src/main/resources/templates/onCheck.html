@@ -1,3 +1,52 @@
-<div th:fragment="onCheck">
-    <p>OnCheck</p>
+<div th:fragment="onCheck" class="oncheck">
+
+    <header class="oncheck-header">
+        <h2>onCheck</h2>
+        <p class="oncheck-subtitle">
+            A Java-based application built with Maven, following standard enterprise
+            development practices.
+        </p>
+    </header>
+
+    <section class="oncheck-description">
+        <p>
+            onCheck is designed as a modular and maintainable codebase, using Java for
+            core logic and CSS for presentation. The project structure reflects an
+            intention to combine backend processing with a simple, clean user interface.
+            Maven is used for dependency management, build consistency, and scalability.
+        </p>
+    </section>
+
+    <section class="oncheck-images">
+        <figure>
+            <img th:src="@{/images/onCheck/onCheckLoginUi.png}"
+                 alt="onCheck Login UI">
+            <figcaption>Login Interface</figcaption>
+        </figure>
+
+        <figure>
+            <img th:src="@{/images/onCheck/onCheckFrontUi.png}"
+                 alt="onCheck Main Interface">
+            <figcaption>Main Interface</figcaption>
+        </figure>
+    </section>
+
+    <section class="oncheck-status">
+        <p>
+            At its current stage, onCheck represents an early-phase implementation,
+            suitable for learning and experimentation. With added documentation,
+            clear feature definitions, and versioning, it can evolve into a
+            production-ready or showcase-level application.
+        </p>
+    </section>
+
+    <section class="oncheck-learning">
+        <h3>What I Learned / Achieved</h3>
+        <ul>
+            <li>Structuring a Java project using Maven best practices</li>
+            <li>Separating backend logic from presentation concerns</li>
+            <li>Building and styling a simple UI for a Java-based application</li>
+        </ul>
+    </section>
+
 </div>
