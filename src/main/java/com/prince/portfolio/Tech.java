@@ -4,6 +4,11 @@ public class Tech {
     private String name;
     private String icon; // image path
 
+    public Tech(String name, String icon) {
+        this.name = name;
+        this.icon = icon;
+    }
+
     public String getName() { return name; }
 
     public String getIcon() { return icon; }

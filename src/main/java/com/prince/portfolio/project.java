@@ -3,6 +3,7 @@ package com.prince.portfolio;
 import java.util.List;
 
 public class project {
+
     private String name;
     private String path;
     private String slug;
@@ -10,17 +11,42 @@ public class project {
     private String description;
     private List<Tech> techStack;
 
+    public project(String name,
+                   String slug,
+                   String path,
+                   String image,
+                   String description,
+                   List<Tech> techStack) {
 
-    public project(String name, String path) {
         this.name = name;
+        this.slug = slug;
         this.path = path;
+        this.image = image;
+        this.description = description;
+        this.techStack = techStack;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getSlug() {
+        return slug;
+    }
+
     public String getPath() {
         return path;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<Tech> getTechStack() {
+        return techStack;
     }
 }

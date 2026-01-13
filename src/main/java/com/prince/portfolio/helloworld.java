@@ -15,8 +15,17 @@ public class helloworld {
         m.addAttribute("activePage","home");
 
         List<project> prj = new ArrayList<>();
-        prj.add(new project("onCheck","onCheck"));
-        prj.add(new project("realState","realState"));
+        prj.add(new project("onCheck",
+                "onCheck",
+                "onCheck",
+                "/images/onCheck/onCheckFrontUi.png",
+                "A Java-based Spring Boot application.",
+                List.of(
+                        new Tech("Java", "/images/java-logo.png"),
+                        new Tech("Spring Boot", "/images/spring-boot-logo.png"),
+                        new Tech("HTML", "/images/html-logo.png")
+                )));
+//        prj.add(new project("realState","realState","realState",));
 
         m.addAttribute("projects",prj);
         return "layout";
