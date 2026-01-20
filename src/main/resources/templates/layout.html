@@ -3,6 +3,7 @@
 <head>
     <title>Portfolio</title>
     <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:if="${home}" th:href="@{/css/education.css}">
     <link rel="stylesheet" th:if="${projectInsideStyle}" th:href="@{/css/projectInside.css}">
 </head>
 <body>
@@ -21,7 +22,7 @@
             <div th:replace="~{projects :: my-project}"></div>
 
             <!-- Education-->
-            <div th:replace="~{}"></div>
+            <div th:replace="~{Education :: education}"></div>
 
 
         </div>

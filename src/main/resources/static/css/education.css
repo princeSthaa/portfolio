@@ -1,0 +1,84 @@
+/* ===== Education Section ===== */
+#education {
+    padding: 60px 20px;
+}
+
+#education h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+/* ===== Container ===== */
+.education-container {
+    display: flow;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== Card with Gradient Border ===== */
+.education-card {
+    position: relative;
+    padding: 22px 20px;
+    border-radius: 16px;
+    background: #1f1f1f; /* inner card color */
+    color: #ffffff;
+    margin-bottom: 20px;
+    /* gradient border trick */
+    background-image: linear-gradient(#222222, #222222), linear-gradient(135deg, #b672fa, #7434e3);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.education-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(124, 58, 237, 0.1);
+}
+
+/* ===== Text ===== */
+.education-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.education-card .institution {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.education-card .year {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 16px;
+}
+
+/* ===== Logo ===== */
+.collegeLogo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+/* ===== Mobile Optimization ===== */
+@media (max-width: 600px) {
+    #education {
+        padding: 40px 14px;
+    }
+
+    #education h2 {
+        font-size: 1.8rem;
+    }
+
+    .education-card {
+        padding: 18px;
+    }
+
+    .collegeLogo {
+        width: 54px;
+        height: 54px;
+    }
+}

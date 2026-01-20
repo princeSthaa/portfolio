@@ -1,6 +1,7 @@
 package com.prince.portfolio;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -98,14 +99,48 @@ public class helloworld {
         ));
     }
 
+    private List<education> setEducation(List<education> edu) {
+        edu.add(new education(
+                "Bachelor of Computer Application",
+                "Tribhuvan University",
+                "2022-present",
+                "/images/collegeLogo/"
+        ));
+        edu.add(new education(
+                "Higher Secondary Education(+2) - Management",
+                "Tirbhuvan University",
+                "2020-2022",
+                "/images/collegeLogo/"
+        ));
+        edu.add(new education(
+                "Secondary School",
+                "Tribhuvan Unversity",
+                "2019",
+                "images/collegeLogo"
+        ));
+
+        return edu;
+    }
+
+    private List<experience> setExperience(List<experience>exp) {
+        return exp;
+    }
     @GetMapping("/")
     public String aboutMe(
             @RequestParam(required = false) String visitingPage,
             Model m
-            ) {
+    ) {
+        List<education> edu = new ArrayList<>();
+        edu = setEducation(edu);
+
+        List<experience> exp = new ArrayList<>();
+        exp = setExperience(exp);
+
+        m.addAttribute("education",edu);
+        m.addAttribute("experience",exp);
         m.addAttribute("loadPage","home");
         m.addAttribute("projects",prj);
-        m.addAttribute("projects",prj);
+        m.addAttribute("home",true);
         return "layout";
     }
 
@@ -129,15 +164,13 @@ public class helloworld {
         return "layout";
     }
 
-    @GetMapping("/realState")
-    public String realState(
-            @RequestParam(required = false) String visitingPage,
-            Model m) {
-        m.addAttribute("visitingPage",visitingPage);
-        m.addAttribute("activePage","realState");
-        m.addAttribute("realStateStyle",true);
-        return "layout";
-    }
-
+//    public static void main(String[] args) {
+//        helloworld obj = new helloworld();
+//        Model m = new ExtendedModelMap();
+//        String result = obj.aboutMe("s", m);
+//
+//        System.out.println("Returned view: " + result);
+//        System.out.println("Model attributes: " + m.asMap());
+//    }
 
 }
