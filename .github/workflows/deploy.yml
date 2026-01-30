@@ -1,0 +1,28 @@
+name: Deploy Spring Boot JAR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build JAR
+        run: mvn clean package -DskipTests
+
+      - name: Copy JAR to Server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: target/*.jar
+          target: /home/ubuntu/app/
+
+          $("#name").get....
+          let name = document.getQ

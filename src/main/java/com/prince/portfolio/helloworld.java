@@ -1,16 +1,15 @@
 package com.prince.portfolio;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ExtendedModelMap;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class helloworld {
@@ -97,6 +96,43 @@ public class helloworld {
                         "Structuring a Java project using Maven best practices"
                 )
         ));
+
+        prj.put(
+                "DSA Visualizer", new project(
+                        "DSA Visaulizer", 
+                        "projectInside",
+                        "/images/dsaVis/homePage.png",
+                        "Interactive Data Structures & Algorithms Visualizer.", 
+                        "A web application that visualizes data structures and algorithm operations to help learners understand how DSA concepts work internally. It provides interactive visualizations for key structures and algorithms, enabling users to watch step-by-step execution and improve comprehension through visual feedback.", 
+                        "Early Development / Work-in-Progress", 
+                        "https://github.com/oidex69/dsa-visualizer", 
+                        List.of(
+                                new Tech("Java", "/images/java-logo.png"),
+                                new Tech("Spring Boot", "/images/spring-boot-logo.png"),
+                                new Tech("HTML", "/images/html-logo.png"),
+                                new Tech("CSS", "/images/css-logo.png"),
+                                new Tech("JavaScript", "/images/javascript-logo.png")
+                        ), 
+                        Map.of(
+                                "Home Page", "/images/dsaVis/homePage.png",
+                                "Visualizer","/images/dsaVis/visualizer.png",
+                                "Key Visualization","/images/dsaVis/mainFunction.png"
+                        ), 
+                        Map.of(
+                                "Sorting Visualizations", "Step-by-step visualization of common sorting algorithms (e.g., bubble, insertion, quick).",
+                                "Data Structure Operations", "Visual interactive exploration of core structures like arrays, linked lists, stacks, and trees.",
+                                "Algorithm Animation Controls", "Play, pause, and reset controls for watching algorithm execution over time.",
+                                "Interactive UI", "Responsive interface that lets users input values and visualize DSA concepts dynamically."
+                        ), 
+                        List.of(
+                                "How algorithm animations can help in understanding time and space complexity.",
+                                "Fundamentals of visualizing data structures such as stacks, queues, and trees.",
+                                "Techniques for building interactive educational tools with web technologies.",
+                                "Challenges in translating algorithm operations into intuitive visual forms."
+                        )
+                )
+        );
+
     }
 
     private List<education> setEducation(List<education> edu) {
@@ -104,19 +140,19 @@ public class helloworld {
                 "Bachelor of Computer Application",
                 "Tribhuvan University",
                 "2022-present",
-                "/images/collegeLogo/"
+                "/images/collegeLogo/nccsCollege.png"
         ));
         edu.add(new education(
                 "Higher Secondary Education(+2) - Management",
                 "Tirbhuvan University",
                 "2020-2022",
-                "/images/collegeLogo/"
+                "/images/collegeLogo/nccsCollege.png"
         ));
         edu.add(new education(
                 "Secondary School",
                 "Tribhuvan Unversity",
                 "2019",
-                "images/collegeLogo"
+                "/images/collegeLogo/nccsSchool.png"
         ));
 
         return edu;
