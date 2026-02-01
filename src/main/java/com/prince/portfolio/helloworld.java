@@ -1,9 +1,6 @@
 package com.prince.portfolio;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class helloworld {
-    Map<String,project> prj = new HashMap<>();
+    Map<String,project> prj = new LinkedHashMap<>();
 
     public helloworld() {
         prj.put("On Check", new project("On Check",
