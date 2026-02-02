@@ -5,50 +5,46 @@ import java.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class helloworld {
     Map<String,project> prj = new LinkedHashMap<>();
     public helloworld() {
-        prj.put("On Check", new project("On Check",
-                "projectInside",
-                "/images/onCheck/onCheckFrontUi.png",
-                "A Java-based application built with Maven, following standard enterprise development practices.",
-                "This project implements a predictive analytics web application for estimating residential property values, " +
-                        "focusing on both house price prediction and land price prediction." +
-                        " At its core, the system integrates machine learning-driven valuation models with a backend API layer, enabling structured inputs" +
-                        " (such as area, location attributes, built-up specification, and land metrics) to produce reliable price estimates." +
-                        " The solution combines data-driven modeling with a scalable server architecture, delivering an end-to-end forecasting capability that" +
-                        " supports real estate decision-making.",
-                "At its current stage, onCheck represents an early-phase implementation," +
-                        " suitable for learning and experimentation. With added documentation," +
-                        " clear feature definitions, and versioning, it can evolve into a" +
-                        " production-ready or showcase-level application.",
-                "https://github.com/oidex69/onCheck",
-                //
-                List.of(
-                        new Tech("Java", "/images/java-logo.png"),
-                        new Tech("Spring Boot", "/images/spring-boot-logo.png"),
-                        new Tech("HTML", "/images/html-logo.png")
-                ),
-                // Map of picture to be shown
-                Map.of(
-                        "Main Interface", "/images/onCheck/onCheckFrontUi.png",
-                        "Login Interface", "/images/onCheck/onCheckLoginUi.png" ),
-//              Map Of features of the program
-                Map.of(
-                  "Tally","Better Tally method",
-                  "Safe Storage", "Best for Storing tallies per Date"
-                ),
-                // List of What i've Learned
-                List.of(
-                        "Structuring a Java project using Maven best practices",
-                        "Separating backend logic from presentation concerns",
-                        "Building and styling a simple UI for a Java-based application"
+        prj.put("DSA Visualizer", new project(
+                        "DSA Visualizer",
+                        "projectInside",
+                        "/images/dsaVis/homePage.png",
+                        "Interactive Data Structures & Algorithms Visualizer.",
+                        "A web application that visualizes data structures and algorithm operations to help learners understand how DSA concepts work internally. It provides interactive visualizations for key structures and algorithms, enabling users to watch step-by-step execution and improve comprehension through visual feedback.",
+                        "Early Development / Work-in-Progress",
+                        "https://github.com/oidex69/dsa-visualizer",
+                        List.of(
+                                new Tech("Java", "/images/java-logo.png"),
+                                new Tech("Spring Boot", "/images/spring-boot-logo.png"),
+                                new Tech("HTML", "/images/html-logo.png"),
+                                new Tech("CSS", "/images/css-logo.png"),
+                                new Tech("JavaScript", "/images/javascript-logo.png")
+                        ),
+                        Map.of(
+                                "Home Page", "/images/dsaVis/homePage.png",
+                                "Visualizer","/images/dsaVis/visualizer.png",
+                                "Key Visualization","/images/dsaVis/mainFunction.png"
+                        ),
+                        Map.of(
+                                "Sorting Visualizations", "Step-by-step visualization of common sorting algorithms (e.g., bubble, insertion, quick).",
+                                "Data Structure Operations", "Visual interactive exploration of core structures like arrays, linked lists, stacks, and trees.",
+                                "Algorithm Animation Controls", "Play, pause, and reset controls for watching algorithm execution over time.",
+                                "Interactive UI", "Responsive interface that lets users input values and visualize DSA concepts dynamically."
+                        ),
+                        List.of(
+                                "How algorithm animations can help in understanding time and space complexity.",
+                                "Fundamentals of visualizing data structures such as stacks, queues, and trees.",
+                                "Techniques for building interactive educational tools with web technologies.",
+                                "Challenges in translating algorithm operations into intuitive visual forms."
+                        )
                 )
-        ));
+        );
 
         prj.put("Real State", new project(
                 "Real State",
@@ -93,40 +89,43 @@ public class helloworld {
                 )
         ));
 
-        prj.put("DSA Visualizer", new project(
-                        "DSA Visualizer",
-                        "projectInside",
-                        "/images/dsaVis/homePage.png",
-                        "Interactive Data Structures & Algorithms Visualizer.", 
-                        "A web application that visualizes data structures and algorithm operations to help learners understand how DSA concepts work internally. It provides interactive visualizations for key structures and algorithms, enabling users to watch step-by-step execution and improve comprehension through visual feedback.", 
-                        "Early Development / Work-in-Progress", 
-                        "https://github.com/oidex69/dsa-visualizer", 
-                        List.of(
-                                new Tech("Java", "/images/java-logo.png"),
-                                new Tech("Spring Boot", "/images/spring-boot-logo.png"),
-                                new Tech("HTML", "/images/html-logo.png"),
-                                new Tech("CSS", "/images/css-logo.png"),
-                                new Tech("JavaScript", "/images/javascript-logo.png")
-                        ), 
-                        Map.of(
-                                "Home Page", "/images/dsaVis/homePage.png",
-                                "Visualizer","/images/dsaVis/visualizer.png",
-                                "Key Visualization","/images/dsaVis/mainFunction.png"
-                        ), 
-                        Map.of(
-                                "Sorting Visualizations", "Step-by-step visualization of common sorting algorithms (e.g., bubble, insertion, quick).",
-                                "Data Structure Operations", "Visual interactive exploration of core structures like arrays, linked lists, stacks, and trees.",
-                                "Algorithm Animation Controls", "Play, pause, and reset controls for watching algorithm execution over time.",
-                                "Interactive UI", "Responsive interface that lets users input values and visualize DSA concepts dynamically."
-                        ), 
-                        List.of(
-                                "How algorithm animations can help in understanding time and space complexity.",
-                                "Fundamentals of visualizing data structures such as stacks, queues, and trees.",
-                                "Techniques for building interactive educational tools with web technologies.",
-                                "Challenges in translating algorithm operations into intuitive visual forms."
-                        )
+        prj.put("On Check", new project("On Check",
+                "projectInside",
+                "/images/onCheck/onCheckFrontUi.png",
+                "A Java-based application built with Maven, following standard enterprise development practices.",
+                "This project implements a predictive analytics web application for estimating residential property values, " +
+                        "focusing on both house price prediction and land price prediction." +
+                        " At its core, the system integrates machine learning-driven valuation models with a backend API layer, enabling structured inputs" +
+                        " (such as area, location attributes, built-up specification, and land metrics) to produce reliable price estimates." +
+                        " The solution combines data-driven modeling with a scalable server architecture, delivering an end-to-end forecasting capability that" +
+                        " supports real estate decision-making.",
+                "At its current stage, onCheck represents an early-phase implementation," +
+                        " suitable for learning and experimentation. With added documentation," +
+                        " clear feature definitions, and versioning, it can evolve into a" +
+                        " production-ready or showcase-level application.",
+                "https://github.com/oidex69/onCheck",
+                //
+                List.of(
+                        new Tech("Java", "/images/java-logo.png"),
+                        new Tech("Spring Boot", "/images/spring-boot-logo.png"),
+                        new Tech("HTML", "/images/html-logo.png")
+                ),
+                // Map of picture to be shown
+                Map.of(
+                        "Main Interface", "/images/onCheck/onCheckFrontUi.png",
+                        "Login Interface", "/images/onCheck/onCheckLoginUi.png" ),
+//              Map Of features of the program
+                Map.of(
+                  "Tally","Better Tally method",
+                  "Safe Storage", "Best for Storing tallies per Date"
+                ),
+                // List of What i've Learned
+                List.of(
+                        "Structuring a Java project using Maven best practices",
+                        "Separating backend logic from presentation concerns",
+                        "Building and styling a simple UI for a Java-based application"
                 )
-        );
+        ));
     }
 
     private List<education> setEducation(List<education> edu) {
@@ -176,17 +175,15 @@ public class helloworld {
     }
 
     @GetMapping("/projectInside")
-    public String onCheck(
+    public String projectInside(
             @RequestParam(required = false) String visitingPage,
             Model m
             ) {
 
         project selectedProject = prj.get(visitingPage);
-
         if(selectedProject == null) {
             return "error/404";
         }
-
         m.addAttribute("project",selectedProject);
         m.addAttribute("projectInsideStyle",true);
         m.addAttribute("activePage",visitingPage);

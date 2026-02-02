@@ -90,11 +90,6 @@ body {
     align-items: center;
 }
 
-#location::before {
-    content: "📍";
-    margin-right: 6px;
-}
-
 .links {
     display: flex;
     align-items: center;
