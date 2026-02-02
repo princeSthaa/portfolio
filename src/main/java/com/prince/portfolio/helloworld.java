@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class helloworld {
     Map<String,project> prj = new LinkedHashMap<>();
-
     public helloworld() {
         prj.put("On Check", new project("On Check",
                 "projectInside",
@@ -53,7 +52,7 @@ public class helloworld {
 
         prj.put("Real State", new project(
                 "Real State",
-                "onCheck",
+                "projectInside",
                 "/images/realState/realStateHomePage.png",
                 "A machine learning–driven real estate price prediction system built using Spring Boot.",
                 "This project implements a predictive analytics web application for estimating residential property values,\n" +
@@ -94,9 +93,8 @@ public class helloworld {
                 )
         ));
 
-        prj.put(
-                "DSA Visualizer", new project(
-                        "DSA Visaulizer", 
+        prj.put("DSA Visualizer", new project(
+                        "DSA Visualizer",
                         "projectInside",
                         "/images/dsaVis/homePage.png",
                         "Interactive Data Structures & Algorithms Visualizer.", 
@@ -129,7 +127,6 @@ public class helloworld {
                         )
                 )
         );
-
     }
 
     private List<education> setEducation(List<education> edu) {
@@ -178,9 +175,8 @@ public class helloworld {
         return "layout";
     }
 
-    @GetMapping("/{projectKey}")
+    @GetMapping("/projectInside")
     public String onCheck(
-            @PathVariable String projectKey,
             @RequestParam(required = false) String visitingPage,
             Model m
             ) {

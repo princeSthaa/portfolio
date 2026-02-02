@@ -26,7 +26,7 @@
 
         </div>
         <div th:case="projectInside">
-            <div th:replace="projectInside :: project"></div>
+            <div th:replace="~{projectInside :: project}"></div>
         </div>
     </div>
 </div>
